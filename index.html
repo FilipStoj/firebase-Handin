@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://kit.fontawesome.com/5a4a110866.js" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <title>Note cards</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+
+    <div class="container">
+        <h1 class="text-center">Your notes</h1>
+
+        <!-- SEARCH BAR AT THE TOP -->
+        <div class="row spacerSearch">
+            <div class="col-md-6 col-md-offset-3 input-group" id="search">
+                <input type="text" class="form-control" placeholder="Search notes" id="searchValue" required>
+            </div>   
+        </div>
+
+
+        <!-- SHOW ONLY IMPORTANT NOTES -->
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div id="importantFilter">
+                    <input type="checkbox" onclick="showImpNotes()" id="filterImportant">
+                    <span class="importantCheckOnly">See only important notes</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="showNotes">
+            <!-- NOTES ARE SHOWING IN THIS DIV -->
+        </div>
+
+        <div class="row">
+            <form id="addNewNote">
+                <div class="col-md-5">
+                    <label class="headingNote" for="note">Add a new note:</label>
+
+                      <!--- TITLE FOR THE NOTE -->
+                    <input class="form-control inputDesign" type="text" name="inputTitle" id="title" placeholder="Title"
+                        required maxlength="25">
+                    <textarea form="addingNewNoteForm" rows="8" name="textAreaBody" placeholder="Write your note..."
+                        id="body" class="form-control"></textarea>
+
+                    <!--- CHECKBOX FOR THE NOTE EITHER IMPORTANT OR NOT -->
+                    <div class="form-group form-check">
+                        <input type="checkbox" name="inputImportant" id="inputImportant" class="form-check-input">
+                        <label class="headingImportantNote" for="inputImportant" class="form-check-label">Important
+                            note</label>
+                    </div>
+
+                    <!--- ADD YOUR NOTE BUTTON -->
+                    <div class="addFormNoteDesign">
+                        <div class="form-group">
+                            <input type="submit" value="Add your note" class="btnInput">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+     <!---EDIT FORM (DOES NOT WORK 100% I ALMOST HAD IT) -->
+    <div class="popup-wrapper">
+        <div class="popup">
+                <div class="popup-content">
+                    <h2 class="popup-heading">Edit your note</h2>
+                <form class="edit-add-notes">
+                    <input type="hidden" id="fireId" value="0"/>
+                <div class="input-group">
+                      <!--- DATA INFORMATION TITLE -->
+                <input type="text" class="form-control" name="title" id="notes" placeholder="Enter a title" required>
+                    <!--- DATA INFORMATION BODY -->
+                <input type="text" class="form-control" name="body" id="notes" placeholder="Enter a body" required>
+                      <!--- DATA INFORMATION IMPORTANT -->
+                    <input type="checkbox" name="editImportant" id="editImportant" class="form-check-input">
+                        <label class="editImportantNote" value="checkbox" for="editImportant" class="form-check-label">Important
+                            note</label>
+                </div>
+                <input type="submit" value="Save your note" class="btnInput">
+           </form>
+          </div>
+        </div>
+    </div>
+
+    <!-- OUR SCRIPT TAGS FROM THE DATABASE  -->
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+    <script>
+        // Initialize firebase 
+        const firebaseConfig = {
+            apiKey: "AIzaSyAG0EhkFq37cx4og7KtNUAHXtUcQJMrFqk",
+            authDomain: "notes-handin.firebaseapp.com",
+            projectId: "notes-handin",
+            storageBucket: "notes-handin.appspot.com",
+            messagingSenderId: "1068947221158",
+            appId: "1:1068947221158:web:f276fe86e8fc85f10a2267",
+            measurementId: "G-PN2V4HZ1BD"
+        };
+        firebase.initializeApp(firebaseConfig);
+        // Initialize our Firestore connection and stores it inside our variable (db)
+        // Firestore is a method and we have access to it because of our second script where we type firestore.js
+        const db = firebase.firestore();
+    </script>
+
+    <script src="sandbox.js"></script>
+</body>
+</html>

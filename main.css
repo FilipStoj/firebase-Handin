@@ -1,0 +1,133 @@
+body{
+    margin-top: 20px;
+}
+
+.noteDesign {
+    width: 300px;
+    height: auto;
+    background-color: #b8d8d8;
+    display: inline-block;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right:25px;
+    margin-bottom:25px;
+    border-radius:5px;
+    box-shadow: 5px 5px 7px rgba(33,33,33,.2);
+}
+
+.noteDesign h4 {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.noteDesign p.description {
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+
+.noteDesign p.dateDesign {
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.noteDesign #importantNote {
+    font-size: 14px;
+}
+
+.noteDesign .fas.fa-trash {
+    color: #808080;
+    font-size: 18px;
+    margin-left: 220px;
+}
+
+.noteDesign .fas.fa-trash:hover {
+    cursor: pointer;
+    color: #696969;
+}
+
+.noteDesign .fas.fa-pen {
+    color:orange;
+    font-size: 18px;
+}
+
+.noteDesign .fas.fa-pen:hover {
+    cursor: pointer;
+    color:#ffb676;
+}
+
+.addFormNoteDesign {
+    margin-bottom: 100px;
+}
+
+.headingNote {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.inputDesign {
+    margin-bottom: 10px;
+}
+
+.headingImportantNote {
+    margin-top: 10px;
+}
+
+#showNotes {
+    margin-top: 40px;
+}
+
+.btnInput {
+  background-color: black;
+  padding: 10px;
+  color: #fff;
+  border: none;
+  font-size: 15px;
+}
+
+.spacerSearch {
+    margin-top: 30px;
+}
+
+.filtered {
+    display: none !important;
+}
+
+.popup-wrapper {
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.popup-heading {
+    margin-bottom: 25px;
+}
+
+.popup {
+    text-align: center;
+    max-width: 500px;
+    margin: 15% auto;
+    padding: 25px;
+    background: white;
+}
+
+.input-group .form-control {
+    margin-bottom: 10px;
+}
+
+label.editImportantNote {
+    margin-left: 5px;
+}
+
+#importantFilter {
+    font-weight: 700;
+    margin-left: -15px;
+} 
